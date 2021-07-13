@@ -1,0 +1,320 @@
+//@import "dark.scss";
+@import "light.scss";
+
+//css start
+.body {
+  color: $text;
+  padding: 0;
+  margin: 0;
+  font-family: "Baloo 2", cursive;
+  width: 100vw;
+}
+.wrapper {
+  background: rgb(14, 14, 41);
+  background: linear-gradient(
+    20deg,
+    rgba(14, 14, 41, 1) 0%,
+    rgba(10, 11, 29, 1) 22%,
+    rgba(36, 44, 68, 1) 70%,
+    rgba(41, 48, 75, 1) 100%
+  );
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.ico {
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  $size: 40px;
+  color: white;
+  font-weight: bold;
+  border-radius: $size;
+  background: $highlight;
+  height: $size;
+  width: $size;
+  margin: 5px;
+}
+.container {
+  filter: drop-shadow(0 0 0.75rem #08081d);
+  margin: 50px;
+  width: 100vw;
+  display: flex;
+
+  background: $mainBg;
+  background: $mainBgGrad;
+}
+
+.nav {
+  color: $text;
+  background-color: $navBg;
+  backdrop-filter: blur(4px);
+  flex: 2;
+  .user {
+    font-size: large;
+    background: $navBg;
+    background: $userGrad;
+    padding: 10px;
+    height: 40px;
+  }
+  .navContainer {
+    height: calc(100% - 61px);
+    overflow-y: scroll;
+    .hover {
+      transition-duration: 0.2s;
+      background-color: $highhover;
+    }
+    .box {
+      font-size: large;
+      padding: 8px 13px;
+      &:hover {
+        @extend .hover;
+      }
+    }
+    .content {
+      border-left: solid 4px transparent;
+      padding: 5px 10px;
+      &:hover {
+        @extend .hover;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .active {
+      background: $highlight;
+      background: linear-gradient(
+        90deg,
+        rgba($highlight, 0.25) 0%,
+        rgba($highlight, 0) 50%
+      );
+      color: $highlight;
+      border-left: solid 4px;
+      .title {
+        font-weight: bold;
+      }
+    }
+  }
+}
+.secTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  * {
+    color: $text;
+    margin: 5px;
+  }
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    &:hover {
+      color: $highlight;
+    }
+  }
+}
+.secTitle {
+  font-weight: bold;
+  padding: 0 20px;
+  padding-bottom: 5px;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid $wht;
+  font-size: large;
+  .sort {
+    font-size: small;
+  }
+}
+.list {
+  background: $listBg;
+  background: $listBgGrad;
+  width: 100px;
+  flex: 3;
+  .search {
+    width: 200px;
+    color: $text;
+    background: $highlightLow;
+    display: flex;
+    justify-content: center;
+    border: 1px solid;
+    border-radius: 3px;
+    margin: 10px;
+    input {
+      background: transparent;
+      border: 0;
+      width: 80%;
+      margin-right: 5px;
+      &:active {
+        border: 0;
+      }
+    }
+  }
+  .emailListContainer {
+    height: calc(100% - 91px);
+    overflow-y: scroll;
+
+    .email {
+      background: $listEmailBg;
+      &:hover {
+        background: $listEmailBgHover;
+      }
+      border-bottom: 1px solid $wht;
+      border-left: 4px solid $highlight;
+      .icon {
+        padding-right: 10px;
+      }
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .detail {
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        .from {
+          overflow-x: hidden;
+          text-overflow: ellipsis;
+          display: block;
+          font-weight: bold;
+        }
+        .title {
+          overflow-x: hidden;
+          text-overflow: ellipsis;
+          display: block;
+          color: $highlightTitle;
+          font-weight: bold;
+        }
+        .description {
+          overflow-x: hidden;
+          text-overflow: ellipsis;
+          display: block;
+        }
+      }
+    }
+    .active {
+      background: $highlight;
+      background: linear-gradient(
+        90deg,
+        rgba($highlight, 0.4) 0%,
+        $highlightLow 50%
+      );
+    }
+  }
+}
+
+.detail {
+  background: rgb(70, 70, 70);
+  background: linear-gradient(
+    90deg,
+    rgba(3, 3, 18, 0.02) 0%,
+    rgba(3, 3, 18, 0) 10%
+  );
+  flex: 4;
+  .emailContainer {
+    overflow-y: scroll;
+    height: calc(100% - 91px);
+    padding: 0 20px;
+    .to {
+      font-size: small;
+      display: block;
+    }
+    .topContainer {
+      padding-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .open {
+        margin: 5px;
+        font-size: x-large;
+      }
+      .senderContainer {
+        display: flex;
+        align-items: center;
+        .senderDetail {
+          .emailadd {
+            font-size: small;
+            &::before {
+              content: "<";
+            }
+            &::after {
+              content: ">";
+            }
+          }
+          .time {
+            display: block;
+            font-size: small;
+          }
+        }
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+.trayButton,
+.trayButtonO {
+  position: absolute;
+  padding: 8px;
+  display: none;
+  font-size: x-large;
+  &:hover {
+    color: $highlight;
+  }
+}
+.trayButtonO {
+  top: 0;
+  right: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  .nav {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    transition-duration: 0.2s;
+    left: 0%;
+  }
+  .user {
+    position: relative;
+  }
+  .nav,
+  .nav div,
+  .nav span {
+    overflow: hidden;
+    white-space: no-wrap;
+  }
+  .list,
+  .detail {
+    width: 100vw;
+  }
+  .trayButton,
+  .trayButtonO {
+    display: block;
+    transition-duration: 0.2s;
+  }
+}

@@ -1,0 +1,28 @@
+$highlight: #5527ff !default;
+$highhover: rgba($highlight, 0.2) !default;
+$highlightLow: rgba(0, 20, 130, 0.2) !default;
+$highlightTitle: #f8edff !default;
+$wht: rgba(255, 255, 255, 0.4) !default;
+$text: white !default;
+$mainBg: rgb(13, 13, 29) !default;
+$mainBgGrad: linear-gradient(
+  20deg,
+  rgba(13, 13, 29, 1) 0%,
+  rgba(27, 28, 49, 1) 22%,
+  rgba(65, 70, 87, 1) 70%,
+  rgba(79, 84, 103, 1) 100%
+) !default;
+$navBg: rgba(3, 3, 18, 0.8) !default;
+$userGrad: linear-gradient(
+  0deg,
+  rgba(3, 3, 18, 0) 0%,
+  rgba(3, 3, 18, 0.7) 100%
+) !default;
+$listBg: rgb(0, 116, 172) !default;
+$listBgGrad: linear-gradient(
+  10deg,
+  rgba(0, 156, 146, 1) 0%,
+  rgba(0, 255, 163, 1) 100%
+) !default;
+$listEmailBg: rgba(0, 20, 130, 0.1) !default;
+$listEmailBgHover: rgba(255, 255, 255, 0.1) !default;
